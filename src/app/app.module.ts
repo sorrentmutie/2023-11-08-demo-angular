@@ -7,6 +7,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ProductsPageComponent } from './products/components/products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     FirstComponent,
     SecondComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsPageComponent
   ],
   imports: [
     BrowserModule,
