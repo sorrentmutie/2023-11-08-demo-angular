@@ -28,4 +28,14 @@ export class ProductsPageComponent {
     ];
   }
 
+  showCatalogDetails(selectedProduct: Product | undefined)
+  {
+    alert(selectedProduct?.name);
+  }
+
+  showOfferDetails(selectedProduct: Product | undefined)
+ {
+  console.log(selectedProduct);
+ }
+
 }
