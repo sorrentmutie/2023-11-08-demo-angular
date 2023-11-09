@@ -4,7 +4,7 @@
 
     <button class="btn btn-warning" (click)="addProduct()">Aggiungi Prodotto</button>
  
-    <app-products-table title="Prodotti in catalogo"  
+    <app-products-table [title]="titleCatalog"  
           [products]="products"
           (emitter)="showCatalogDetails($event)"
           ></app-products-table>

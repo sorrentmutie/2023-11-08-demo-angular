@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductCatalog } from '../../services/product-catalog';
 
 @Component({
   selector: 'app-products-page',
@@ -10,33 +11,25 @@ export class ProductsPageComponent {
 
   products: Product[] | undefined = undefined;
   offerProducts: Product[] = [];
+  titleCatalog = "";
 
   constructor(){
-    this. products = this.getProducts();
-    this.offerProducts = this.getProducts();
-    setInterval( () => {
-      this.products?.push({
-        id: Math.random(),
-        name: Math.random().toString(),
-        price: Math.random(),
-        isAvailable: true,
-        releaseDate: new Date(),
-        image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"        
-      })
-    },2000)
+    const catalogService = new ProductCatalog();
+    this.products = catalogService.getProducts();
+    this.offerProducts = catalogService.getProducts();
+    
+    // setInterval( () => {
+    //   this.products?.push({
+    //     id: Math.random(),
+    //     name: Math.random().toString(),
+    //     price: Math.random(),
+    //     isAvailable: true,
+    //     releaseDate: new Date(),
+    //     image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"        
+    //   })
+    // },2000)
   }
  
-  getProducts(): Product[] {
-    return [
-      {id: 1, name: "Frigorifero", price: 1000,
-       isAvailable: true, releaseDate: new Date(),
-       image: "https://cdn.freebiesupply.com/logos/large/2x/angular-icon-1-logo-png-transparent.png"},
-       {id: 2, name: "TV", price: 1000,
-       isAvailable: true, releaseDate: new Date(),
-       image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"}
-
-    ];
-  }
 
   showCatalogDetails(selectedProduct: Product | undefined)
   {
@@ -56,6 +49,8 @@ export class ProductsPageComponent {
        isAvailable: true,  
        image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"
      })
+
+     this.titleCatalog = Math.random().toString();
   }
 
 }
