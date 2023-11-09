@@ -3,7 +3,7 @@ export interface Product {
     name: string,
     price: number,
     releaseDate: Date,
-    isAvailable: boolean,
+    isAvailable: Boolean,
     supplier?: Supplier,
     image: string,
 }

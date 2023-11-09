@@ -1,0 +1,29 @@
+<h3>{{title}}</h3>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Prezzo</th>
+            <th>Data </th>
+            <th>Foto</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let product of products">
+            <td>{{product | mySecond}}</td>
+            <td>{{product.name | uppercase | my}}</td>
+            <td>{{product.price | currency: 'EUR'}}</td>
+            <td>{{product.releaseDate | date: "dd/MM/yyyy"  }}</td>
+            <td>
+                <img alt="foto" src="{{product.image}}">
+            </td>
+            <td>
+                <button class="btn btn-success" >Dettaglio</button>
+            </td>
+         </tr>
+
+      </tbody>
+   </table>
+
