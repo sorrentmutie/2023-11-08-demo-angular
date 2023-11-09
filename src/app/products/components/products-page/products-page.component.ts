@@ -8,32 +8,19 @@ import { ProductCatalog } from '../../services/product-catalog';
   styleUrls: ['./products-page.component.css']
 })
 export class ProductsPageComponent {
-
   products: Product[] | undefined = undefined;
   offerProducts: Product[] = [];
   titleCatalog = "";
+//  _catalogService: ProductCatalog | undefined = undefined;
 
-  constructor(){
-    const catalogService = new ProductCatalog();
+  constructor(private catalogService: ProductCatalog){
+  //  this._catalogService = catalogService;
+  //  const catalogService = new ProductCatalog();
    // catalogService.addProduct();
-
-
     this.products = catalogService.getProducts();
     this.offerProducts = catalogService.getProducts();
-
-    // setInterval( () => {
-    //   this.products?.push({
-    //     id: Math.random(),
-    //     name: Math.random().toString(),
-    //     price: Math.random(),
-    //     isAvailable: true,
-    //     releaseDate: new Date(),
-    //     image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"        
-    //   })
-    // },2000)
   }
  
-
   showCatalogDetails(selectedProduct: Product | undefined)
   {
     alert(selectedProduct?.name);
@@ -55,5 +42,4 @@ export class ProductsPageComponent {
 
      this.titleCatalog = Math.random().toString();
   }
-
 }

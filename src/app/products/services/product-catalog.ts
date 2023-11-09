@@ -1,5 +1,9 @@
+import { Injectable } from "@angular/core";
 import { Product } from "../models/product";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class ProductCatalog {
    private products: Product[] =  [
     {id: 1, name: "Frigorifero", price: 1000,
