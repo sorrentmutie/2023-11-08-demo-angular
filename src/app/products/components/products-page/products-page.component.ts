@@ -9,9 +9,11 @@ import { Product } from '../../models/product';
 export class ProductsPageComponent {
 
   products: Product[] | undefined = undefined;
+  offerProducts: Product[] = [];
 
   constructor(){
     this. products = this.getProducts();
+    this.offerProducts = this.getProducts();
   }
  
   getProducts(): Product[] {

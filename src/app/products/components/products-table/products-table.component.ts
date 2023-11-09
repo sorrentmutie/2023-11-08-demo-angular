@@ -8,4 +8,5 @@ import { Product } from '../../models/product';
 })
 export class ProductsTableComponent {
  @Input() products: Product[] = [];
+ @Input() title: string = "";
 }

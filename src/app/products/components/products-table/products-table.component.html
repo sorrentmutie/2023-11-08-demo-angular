@@ -1,3 +1,4 @@
+<h3>{{title}}</h3>
 <table class="table table-bordered table-striped table-hover">
     <thead>
           <tr>
@@ -6,6 +7,7 @@
             <th>Prezzo</th>
             <th>Data </th>
             <th>Foto</th>
+            <th></th>
           </tr>
       </thead>
       <tbody>
@@ -16,6 +18,9 @@
             <td>{{product.releaseDate | date: "dd/MM/yyyy"  }}</td>
             <td>
                 <img alt="foto" src="{{product.image}}">
+            </td>
+            <td>
+                <button class="btn btn-success" >Dettaglio</button>
             </td>
          </tr>
 
