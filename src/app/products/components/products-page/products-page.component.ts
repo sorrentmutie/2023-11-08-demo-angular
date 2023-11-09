@@ -15,9 +15,12 @@ export class ProductsPageComponent {
 
   constructor(){
     const catalogService = new ProductCatalog();
+   // catalogService.addProduct();
+
+
     this.products = catalogService.getProducts();
     this.offerProducts = catalogService.getProducts();
-    
+
     // setInterval( () => {
     //   this.products?.push({
     //     id: Math.random(),
