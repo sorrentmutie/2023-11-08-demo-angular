@@ -2,31 +2,8 @@
 <div *ngIf="products && products.length > 0; else noProducts">
     <p> Numero totale di prodotti: {{products.length}}</p>
 
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-              <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Prezzo</th>
-                <th>Data </th>
-                <th>Foto</th>
-              </tr>
-          </thead>
-          <tbody>
-             <tr *ngFor="let product of products">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.releaseDate}}</td>
-                <td>
-                    <img alt="foto" src="{{product.image}}">
-                </td>
-             </tr>
-
-          </tbody>
-       </table>
-
-
+ 
+    <app-products-table [products]="products"  ></app-products-table>
 
 
 </div>

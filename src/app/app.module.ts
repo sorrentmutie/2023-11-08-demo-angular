@@ -8,6 +8,9 @@ import { SecondComponent } from './second/second.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ProductsPageComponent } from './products/components/products-page/products-page.component';
+import { MyPipe } from './products/pipes/my.pipe';
+import { MySecondPipe } from './products/pipes/my-second.pipe';
+import { ProductsTableComponent } from './products/components/products-table/products-table.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ProductsPageComponent } from './products/components/products-page/produ
     SecondComponent,
     MenuComponent,
     FooterComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    MyPipe,
+    MySecondPipe,
+    ProductsTableComponent
   ],
   imports: [
     BrowserModule,
