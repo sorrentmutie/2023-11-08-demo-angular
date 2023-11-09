@@ -17,6 +17,9 @@ export class ProductsPageComponent {
   //  this._catalogService = catalogService;
   //  const catalogService = new ProductCatalog();
    // catalogService.addProduct();
+   console.log('Siamo nel costruttor di Products page');
+   console.log(this.catalogService.randomNumber);
+
     this.products = catalogService.getProducts();
     this.offerProducts = catalogService.getProducts();
   }
@@ -32,14 +35,17 @@ export class ProductsPageComponent {
  }
 
   addProduct(){
-     this.products?.push({
+
+    this.catalogService.addProduct(
+     {
        id: 3, name: "Forno a microonde", 
        price: 180, 
        releaseDate: new Date(),
        isAvailable: true,  
        image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"
-     })
+     });
 
+     this.products = this.catalogService.getProducts();
      this.titleCatalog = Math.random().toString();
   }
 }
