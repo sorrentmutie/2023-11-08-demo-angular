@@ -4,10 +4,15 @@
 
  
     <app-products-table title="Prodotti in catalogo"  
-          [products]="products"></app-products-table>
+          [products]="products"
+          (emitter)="showCatalogDetails($event)"
+          ></app-products-table>
     <br/>
     <app-products-table title="Prodotti in offerta" 
-          [products]="offerProducts"></app-products-table>
+          [products]="offerProducts"
+          (emitter)="showOfferDetails($event)"
+          
+          ></app-products-table>
 
 </div>
 

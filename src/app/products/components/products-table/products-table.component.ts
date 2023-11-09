@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/product';
 
 @Component({
@@ -9,4 +9,12 @@ import { Product } from '../../models/product';
 export class ProductsTableComponent {
  @Input() products: Product[] = [];
  @Input() title: string = "";
+
+ @Output() emitter: EventEmitter<Product |undefined> = new EventEmitter();
+
+showDetails(selectedProduct: Product | undefined){
+   //alert(selectedProduct.name);
+   this.emitter.emit(selectedProduct);
+}
+
 }
