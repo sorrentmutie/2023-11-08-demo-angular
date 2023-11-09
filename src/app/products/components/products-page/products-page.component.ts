@@ -14,6 +14,16 @@ export class ProductsPageComponent {
   constructor(){
     this. products = this.getProducts();
     this.offerProducts = this.getProducts();
+    setInterval( () => {
+      this.products?.push({
+        id: Math.random(),
+        name: Math.random().toString(),
+        price: Math.random(),
+        isAvailable: true,
+        releaseDate: new Date(),
+        image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"        
+      })
+    },2000)
   }
  
   getProducts(): Product[] {
@@ -37,5 +47,15 @@ export class ProductsPageComponent {
  {
   console.log(selectedProduct);
  }
+
+  addProduct(){
+     this.products?.push({
+       id: 3, name: "Forno a microonde", 
+       price: 180, 
+       releaseDate: new Date(),
+       isAvailable: true,  
+       image: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png"
+     })
+  }
 
 }
