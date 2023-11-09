@@ -2,23 +2,18 @@
 <div *ngIf="products && products.length > 0; else noProducts">
     <p> Numero totale di prodotti: {{products.length}}</p>
 
+    <button class="btn btn-warning" (click)="addProduct()">Aggiungi Prodotto</button>
  
     <app-products-table title="Prodotti in catalogo"  
           [products]="products"
           (emitter)="showCatalogDetails($event)"
           ></app-products-table>
     <br/>
-    <app-products-table title="Prodotti in offerta" 
+    <!-- <app-products-table title="Prodotti in offerta" 
           [products]="offerProducts"
-          (emitter)="showOfferDetails($event)"
-          
-          ></app-products-table>
+          (emitter)="showOfferDetails($event)"></app-products-table> -->
 
 </div>
-
-
-
-
 
 
 <ng-template #noProducts>
