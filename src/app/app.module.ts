@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RandomUserPageComponent } from './random-users/random-user-page/random-user-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FiglioAComponent } from './figlio-a/figlio-a.component';
+import { FiglioBComponent } from './figlio-b/figlio-b.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ProductsTableComponent,
     RandomUserPageComponent,
     WelcomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FiglioAComponent,
+    FiglioBComponent
   ],
   imports: [
     BrowserModule,
