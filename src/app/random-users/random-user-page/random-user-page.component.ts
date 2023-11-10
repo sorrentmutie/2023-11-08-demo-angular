@@ -10,13 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class RandomUserPageComponent {
     // data: Result[] | undefined = undefined;
-   //  mydata: Observable<Result[]> | undefined = undefined;
+     mydata: Observable<Result[]> | undefined = undefined;
 
-     constructor(public service: RandomUsersService) {
+     constructor(private service: RandomUsersService) {
         // this.service.getBetterRandomUsers('male')
         // .subscribe
         // (data => {this.data = data});
-      //  this.mydata = 
-          //  this.service.getBetterRandomUsers('male');
+        this.mydata = 
+          this.service.getBetterRandomUsers('male');
      }
 }

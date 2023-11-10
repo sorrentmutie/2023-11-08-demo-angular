@@ -18,10 +18,8 @@
    </article>
 </div> -->
 
-    <div *ngFor=" let person of (service.getBetterRandomUsers('male') | async)">
-    <article>
-        <p>{{person.name.first}} {{person.name.last}}</p>
 
+    <article *ngFor=" let person of (mydata | async)">
         <div class="card" style="width: 18rem;">
          <img src="{{person.picture.large}}" class="card-img-top" alt="...">
          <div class="card-body">
@@ -32,6 +30,5 @@
            <a href="#" class="btn btn-primary">Go somewhere</a>
          </div>
        </div>
- 
+    </article>
 
-    </article></div>
