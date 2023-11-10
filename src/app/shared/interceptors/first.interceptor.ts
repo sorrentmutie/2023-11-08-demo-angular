@@ -20,10 +20,6 @@ export class FirstInterceptor implements HttpInterceptor {
     const newRequest = request.clone(
       { headers: request.headers.set("Authorization", "Bearer "+ this.token)
     });
-
-
-    console.log('Sono nel primo interceptor');
-    console.log(request);
     return next.handle(newRequest)
     .pipe(
       tap(evento => {
@@ -32,7 +28,6 @@ export class FirstInterceptor implements HttpInterceptor {
         }
     }),
     catchError( (e: HttpErrorResponse) => {
-      
       throw new Error("Errore gravissimo");
     }))
   }
