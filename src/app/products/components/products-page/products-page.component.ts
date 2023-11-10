@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductCatalog } from '../../services/product-catalog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-page',
@@ -13,7 +14,8 @@ export class ProductsPageComponent {
   titleCatalog = "";
 //  _catalogService: ProductCatalog | undefined = undefined;
 
-  constructor(private catalogService: ProductCatalog){
+  constructor(private router: Router, 
+              private catalogService: ProductCatalog){
   //  this._catalogService = catalogService;
   //  const catalogService = new ProductCatalog();
    // catalogService.addProduct();
@@ -47,5 +49,11 @@ export class ProductsPageComponent {
 
      this.products = this.catalogService.getProducts();
      this.titleCatalog = Math.random().toString();
+
+  }
+
+  navigate(){
+    // this.router.navigate(['/random']);
+     this.router.navigate(['/products', 72]);
   }
 }

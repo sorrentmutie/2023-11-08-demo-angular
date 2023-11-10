@@ -17,6 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FiglioAComponent } from './figlio-a/figlio-a.component';
 import { FiglioBComponent } from './figlio-b/figlio-b.component';
+import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FiglioBComponent } from './figlio-b/figlio-b.component';
     WelcomeComponent,
     NotFoundComponent,
     FiglioAComponent,
-    FiglioBComponent
+    FiglioBComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
