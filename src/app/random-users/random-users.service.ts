@@ -22,5 +22,4 @@ export class RandomUsersService {
                       .filter(p => p.gender === gender))
         );
   }
-
 }

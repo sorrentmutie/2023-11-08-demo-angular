@@ -1,2 +1,10 @@
 <p>first works!</p>
+<div *ngIf="lastCustomer">
+    <p>{{lastCustomer.name}}</p>
+</div>
+
+
 <app-second></app-second>
+<a class="btn btn-success" [routerLink]="['/first/a']">A</a>
+<a class="btn btn-success" [routerLink]="['/first/b']">B</a>
+<router-outlet></router-outlet>
