@@ -16,7 +16,7 @@ export class RandomUsersService {
 
   getBetterRandomUsers(gender: string): Observable<Result[]> {
     return this.httpClient.get<RandomUserResponse>
-    ("https://randomuser.me/api?results=50")
+    ("https://randomuser.me/xxxxxapi?results=50")
          .pipe(
             map(r => r.results
                       .filter(p => p.gender === gender))

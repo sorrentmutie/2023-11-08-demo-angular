@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, filter, map, of } from 'rxjs';
+import { CustomersService } from 'src/app/customers/customers.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,7 @@ import { Observable, filter, map, of } from 'rxjs';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-     constructor(){ 
+     constructor(private service: CustomersService){ 
 
       // const x = fetch("https://randomuser.me/api?results=10")
       // .then(y => y.json())
@@ -30,5 +31,22 @@ export class FooterComponent {
     //   z.unsubscribe();
     //   console.log("out");
     //  
+  }
+
+  addCustomer(){
+
+    this.service.addCustomer({
+      id: Math.random(),
+      name: Math.random().toString()
+    })  ;
+
+
+    setInterval(() => {
+      this.service.addCustomer({
+        id: Math.random(),
+        name: Math.random().toString()
+      })  
+    }, 5000);
+
   }
 }

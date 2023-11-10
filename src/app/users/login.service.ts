@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { Observable, delay, of, tap } from 'rxjs';
+import { Observable, Subject, delay, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,17 @@ import { Observable, delay, of, tap } from 'rxjs';
 export class LoginService {
 
   currentUser: User | undefined = undefined;
+  private subject$ = new Subject<User | undefined>();
+  public currentUser$: Observable< User | undefined> | undefined = undefined;
 
-  constructor() { }
+
+  constructor() {
+    this.currentUser$ = this.subject$.asObservable();
+   }
 
   logout(){
     this.currentUser = undefined;
+    this.subject$.next(undefined);
   }
  
   login(): Observable<boolean>{
@@ -20,11 +26,14 @@ export class LoginService {
       .pipe(
         delay(2000),
         tap( (x: boolean) => {
-           this.currentUser = {
+
+
+           const currentUser = {
             name: "Mario Rossi",
-            url: "",
+            url: "https://www.codeur.com/blog/wp-content/uploads/2018/12/logo-angular.png",
             roles: ["User"]
            }
+           this.subject$.next(currentUser);
         })
       );
   }

@@ -11,13 +11,15 @@ import { ProductsPageComponent } from './products/components/products-page/produ
 import { MyPipe } from './products/pipes/my.pipe';
 import { MySecondPipe } from './products/pipes/my-second.pipe';
 import { ProductsTableComponent } from './products/components/products-table/products-table.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RandomUserPageComponent } from './random-users/random-user-page/random-user-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FiglioAComponent } from './figlio-a/figlio-a.component';
 import { FiglioBComponent } from './figlio-b/figlio-b.component';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
+import { FirstInterceptor } from './shared/interceptors/first.interceptor';
+import { SecondInterceptor } from './shared/interceptors/second.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { ProductDetailsComponent } from './products/components/product-details/p
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: FirstInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: SecondInterceptor, multi: true},    
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
