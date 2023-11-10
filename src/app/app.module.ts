@@ -20,6 +20,9 @@ import { FiglioBComponent } from './figlio-b/figlio-b.component';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { FirstInterceptor } from './shared/interceptors/first.interceptor';
 import { SecondInterceptor } from './shared/interceptors/second.interceptor';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -37,12 +40,14 @@ import { SecondInterceptor } from './shared/interceptors/second.interceptor';
     NotFoundComponent,
     FiglioAComponent,
     FiglioBComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FirstInterceptor, multi: true},
