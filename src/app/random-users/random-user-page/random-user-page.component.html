@@ -1,0 +1,37 @@
+<p>random-user-page works!</p>
+<!-- <div *ngIf="data">
+   <article *ngFor="let person of data">
+       <p>{{person.name.first}} {{person.name.last}}</p>
+
+       <div class="card" style="width: 18rem;">
+        <img src="{{person.picture.large}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{person.name.first}} 
+            {{person.name.last}}
+          </h5>
+          <p class="card-text">{{person.email}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+   </article>
+</div> -->
+
+    <div *ngFor=" let person of (service.getBetterRandomUsers('male') | async)">
+    <article>
+        <p>{{person.name.first}} {{person.name.last}}</p>
+
+        <div class="card" style="width: 18rem;">
+         <img src="{{person.picture.large}}" class="card-img-top" alt="...">
+         <div class="card-body">
+           <h5 class="card-title">{{person.name.first}} 
+             {{person.name.last}}
+           </h5>
+           <p class="card-text">{{person.email}}</p>
+           <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+       </div>
+ 
+
+    </article></div>

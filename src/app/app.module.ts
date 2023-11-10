@@ -11,6 +11,8 @@ import { ProductsPageComponent } from './products/components/products-page/produ
 import { MyPipe } from './products/pipes/my.pipe';
 import { MySecondPipe } from './products/pipes/my-second.pipe';
 import { ProductsTableComponent } from './products/components/products-table/products-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RandomUserPageComponent } from './random-users/random-user-page/random-user-page.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ProductsTableComponent } from './products/components/products-table/pro
     ProductsPageComponent,
     MyPipe,
     MySecondPipe,
-    ProductsTableComponent
+    ProductsTableComponent,
+    RandomUserPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
